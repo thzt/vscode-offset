@@ -7,8 +7,13 @@ Show character offset in VSCode.
 Offset [start, end)
 ```
 
-+ enter an offset
++ goto an offset command
 ```
-Kyeboard Shortcuts (ctrl + shift + o) : ⌃ ⇧ o
+Keyboard Shortcuts (ctrl + shift + o) : ⌃ ⇧ o
+or Click the status bar
 ```
 
++ goto a selection
+```
+Keyboard Shortcuts (ctrl + shift + s) : ⌃ ⇧ s
+```

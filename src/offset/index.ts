@@ -3,11 +3,11 @@ import {
   window, commands, workspace,
 } from 'vscode';
 
-import { onSelectionChange, onStatusBarClick } from './event';
+import { onSelectionChange, onCommand } from './event';
+import { command } from './constant';
 
 const showOffset = (context: ExtensionContext) => {
   const statusBarItem = window.createStatusBarItem(StatusBarAlignment.Right);
-  statusBarItem.command = 'offset.goto';
 
   // dispose statusBarItem while extension deactivate
   context.subscriptions.push(statusBarItem);
@@ -19,8 +19,13 @@ const showOffset = (context: ExtensionContext) => {
 
   // user select some charaters
   context.subscriptions.push(window.onDidChangeTextEditorSelection(() => onSelectionChange(statusBarItem)));
+
   // user click the status bar
-  context.subscriptions.push(commands.registerCommand(statusBarItem.command, onStatusBarClick));
+  statusBarItem.command = command.gotoOffset;
+  context.subscriptions.push(commands.registerCommand(command.gotoOffset, () => onCommand(command.gotoOffset)));
+
+  // goto selection command
+  context.subscriptions.push(commands.registerCommand(command.gotoSelection, () => onCommand(command.gotoSelection)));
 };
 
 export default showOffset;
