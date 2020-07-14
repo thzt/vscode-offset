@@ -1,0 +1,50 @@
+{
+  "name": "vscode-offset",
+  "version": "1.0.0",
+  "description": "Show character offset in VSCode",
+  "main": "./out/extension.js",
+  "scripts": {
+    "build": "trash out && tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thzt/vscode-offset.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thzt/vscode-offset/issues"
+  },
+  "homepage": "https://github.com/thzt/vscode-offset#readme",
+  "devDependencies": {
+    "@types/node": "^13.11.0",
+    "@types/vscode": "^1.44.0",
+    "trash-cli": "^3.0.0",
+    "typescript": "^3.9.6"
+  },
+  "publisher": "thzt",
+  "engines": {
+    "vscode": "^1.44.0"
+  },
+  "activationEvents": [
+    "*"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "offset.goto",
+        "title": "Go to Offset"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "offset.goto",
+        "key": "ctrl+shift+o",
+        "mac": "ctrl+shift+o",
+        "when": "editorTextFocus"
+      }
+    ]
+  }
+}
