@@ -11,8 +11,11 @@
     "type": "git",
     "url": "git+https://github.com/thzt/vscode-offset.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "Offset",
+    "VSCode"
+  ],
+  "author": "thzt",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/thzt/vscode-offset/issues"
@@ -25,6 +28,8 @@
     "typescript": "^3.9.6"
   },
   "publisher": "thzt",
+  "displayName": "VSCode Offset",
+  "icon": "icon.png",
   "engines": {
     "vscode": "^1.44.0"
   },
